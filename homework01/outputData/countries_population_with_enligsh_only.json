@@ -1,0 +1,24 @@
+[
+  { "country": "Anguilla", "language": "English", "population": 15094 },
+  { "country": "Bermuda", "language": "English", "population": 63973 },
+  { "country": "Cayman Islands", "language": "English", "population": 64174 },
+  { "country": "Falkland Islands", "language": "English", "population": 2840 },
+  { "country": "Montserrat", "language": "English", "population": 5900 },
+  { "country": "Norfolk Island", "language": "English", "population": 2169 },
+  { "country": "Saint Helena", "language": "English", "population": 6600 },
+  {
+    "country": "Turks and Caicos Islands",
+    "language": "English",
+    "population": 37665
+  },
+  {
+    "country": "United States Minor Outlying Islands",
+    "language": "English",
+    "population": 300
+  },
+  {
+    "country": "Virgin Islands, British",
+    "language": "English",
+    "population": 29802
+  }
+]

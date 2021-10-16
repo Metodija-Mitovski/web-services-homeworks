@@ -1,0 +1,39 @@
+[
+  {
+    "country": "Austria",
+    "location": "Western Europe",
+    "density": 107.2069267
+  },
+  {
+    "country": "Belgium",
+    "location": "Western Europe",
+    "density": 377.2149273
+  },
+  { "country": "France", "location": "Western Europe", "density": 122.3383957 },
+  {
+    "country": "Germany",
+    "location": "Western Europe",
+    "density": 237.3709698
+  },
+  {
+    "country": "Liechtenstein",
+    "location": "Western Europe",
+    "density": 236.9375
+  },
+  {
+    "country": "Luxembourg",
+    "location": "Western Europe",
+    "density": 250.0938272
+  },
+  { "country": "Monaco", "location": "Western Europe", "density": 19196 },
+  {
+    "country": "Netherlands",
+    "location": "Western Europe",
+    "density": 511.4579104
+  },
+  {
+    "country": "Switzerland",
+    "location": "Western Europe",
+    "density": 215.5213784
+  }
+]

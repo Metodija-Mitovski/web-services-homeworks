@@ -1,0 +1,60 @@
+[
+  { "country": "American Samoa", "currency_name": "US Dollar" },
+  { "country": "Anguilla", "currency_name": "East Caribbean Dollar" },
+  { "country": "Antarctica", "currency_name": "East Caribbean Dollar" },
+  {
+    "country": "Antigua and Barbuda",
+    "currency_name": "East Caribbean Dollar"
+  },
+  { "country": "Australia", "currency_name": "Australian Dollar" },
+  { "country": "Bahamas", "currency_name": "Bahamian Dollar" },
+  { "country": "Barbados", "currency_name": "Barbados Dollar" },
+  { "country": "Belize", "currency_name": "Belize Dollar" },
+  { "country": "Bermuda", "currency_name": "Bermudian Dollar" },
+  { "country": "British Indian Ocean Territory", "currency_name": "US Dollar" },
+  { "country": "Canada", "currency_name": "Canadian Dollar" },
+  { "country": "Cayman Islands", "currency_name": "Cayman Islands Dollar" },
+  { "country": "Christmas Island", "currency_name": "Australian Dollar" },
+  {
+    "country": "Cocos (Keeling) Islands",
+    "currency_name": " Australian Dollar"
+  },
+  { "country": "Cook Islands", "currency_name": "New Zealand Dollar" },
+  { "country": "Dominica", "currency_name": "East Caribbean Dollar" },
+  { "country": "Grenada", "currency_name": "East Carribean Dollar" },
+  { "country": "Guyana", "currency_name": "Guyana Dollar" },
+  {
+    "country": "Heard Island and McDonald Islands",
+    "currency_name": "Australian Dollar"
+  },
+  { "country": "Hong Kong", "currency_name": "Hong Kong Dollar" },
+  { "country": "Jamaica", "currency_name": "Jamaican Dollar" },
+  { "country": "Kiribati", "currency_name": "Australian Dollar" },
+  { "country": "Liberia", "currency_name": "Liberian Dollar" },
+  { "country": "Marshall Islands", "currency_name": "US Dollar" },
+  { "country": "Montserrat", "currency_name": "East Caribbean Dollar" },
+  { "country": "Namibia", "currency_name": "Namibian Dollar" },
+  { "country": "Nauru", "currency_name": "Australian Dollar" },
+  { "country": "New Zealand", "currency_name": "New Zealand Dollar" },
+  { "country": "Niue", "currency_name": "New Zealand Dollar" },
+  { "country": "Norfolk Island", "currency_name": "Australian Dollar" },
+  { "country": "Northern Mariana Islands", "currency_name": "US Dollar" },
+  { "country": "Palau", "currency_name": "US Dollar" },
+  { "country": "Puerto Rico", "currency_name": "US Dollar" },
+  { "country": "Saint Lucia", "currency_name": "East Caribbean Dollar" },
+  {
+    "country": "Saint Vincent and the Grenadines",
+    "currency_name": "East Caribbean Dollar"
+  },
+  { "country": "Singapore", "currency_name": "Singapore Dollar" },
+  { "country": "Solomon Islands", "currency_name": "Solomon Islands Dollar" },
+  { "country": "Suriname", "currency_name": "Surinam Dollar" },
+  { "country": "Tokelau", "currency_name": "New Zealand Dollar" },
+  {
+    "country": "Trinidad and Tobago",
+    "currency_name": "Trinidad and Tobago Dollar"
+  },
+  { "country": "Tunisia", "currency_name": "Tunisian Dollar" },
+  { "country": "Tuvalu", "currency_name": "Australian Dollar" },
+  { "country": "Zimbabwe", "currency_name": "Zimbabwe Dollar" }
+]

@@ -1,0 +1,12 @@
+[
+  { "country": "Bhutan", "elevation": 3280 },
+  { "country": "Nepal", "elevation": 3265 },
+  { "country": "Tajikistan", "elevation": 3186 },
+  { "country": "Kyrgyzstan", "elevation": 2988 },
+  { "country": "Serbia", "elevation": 2826 },
+  { "country": "Antarctica", "elevation": 2300 },
+  { "country": "Lesotho", "elevation": 2161 },
+  { "country": "Andorra", "elevation": 1996 },
+  { "country": "Chile", "elevation": 1871 },
+  { "country": "China", "elevation": 1840 }
+]

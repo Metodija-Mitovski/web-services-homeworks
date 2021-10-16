@@ -1,0 +1,12 @@
+{
+  "Asia": { "largestCountry": "China", "population": 1392730000 },
+  "Europe": { "largestCountry": "Russian Federation", "population": 144478050 },
+  "Africa": { "largestCountry": "Nigeria", "population": 195874740 },
+  "Oceania": { "largestCountry": "Australia", "population": 24982688 },
+  "North America": {
+    "largestCountry": "United States",
+    "population": 326687501
+  },
+  "Antarctica": { "largestCountry": "Antarctica", "population": 1106 },
+  "South America": { "largestCountry": "Brazil", "population": 209469333 }
+}
