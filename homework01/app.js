@@ -138,7 +138,7 @@ const easternHemisphereCountries = async () => {
     });
 
     const output = parsedCountriesBypopulation.filter((data) => {
-      if (eastCountries.includes(data.country) && data.population > 2000000) {
+      if (eastCountries.includes(data.country) && data.population > 2_000_000) {
         return data;
       }
     });
