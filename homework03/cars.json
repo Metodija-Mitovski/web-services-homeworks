@@ -1,0 +1,20 @@
+[
+  {
+    "id": 2,
+    "manufacturer": "audi",
+    "model": "a8",
+    "year": 2020,
+    "engine": 3000,
+    "hp": 280,
+    "fuel": "petrol"
+  },
+  {
+    "id": 4,
+    "manufacturer": "mercedes",
+    "model": "e300",
+    "year": 2010,
+    "engine": 3500,
+    "hp": 180,
+    "fuel": "diesel"
+  }
+]

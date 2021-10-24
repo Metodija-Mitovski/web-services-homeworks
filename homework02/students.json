@@ -1,5 +1,1 @@
-[
-  { "first_name": "janko", "last_name": "jankovski", "gpa": 8.2 },
-  { "first_name": "petre", "last_name": "markovski", "gpa": 6.5 },
-  { "first_name": "stanko", "last_name": "stankovski", "gpa": 7.4 }
-]
+[{"first_name":"janko","last_name":"jankovski","gpa":8.2},{"first_name":"petre","last_name":"markovski","gpa":10},{"first_name":"branko","last_name":"stankovski","gpa":9}]

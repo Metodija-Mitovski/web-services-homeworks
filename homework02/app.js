@@ -30,7 +30,7 @@ api.get("/students", async (req, res) => {
 
     res.status(200).send(parsed_students);
   } catch (error) {
-    res.status(400).send(error);
+    res.status(500).send(error);
   }
 });
 
@@ -44,7 +44,7 @@ api.post("/students", async (req, res) => {
     await write(students_data, output);
     res.status(201).send(req.body);
   } catch (error) {
-    res.status(400).send(error);
+    res.status(500).send(error);
   }
 });
 
@@ -54,10 +54,11 @@ api.get("/students/:id", async (req, res) => {
     const parsed_students = JSON.parse(students);
 
     const student = parsed_students.find((s, i) => i == req.params.id);
+
     if (!student) return res.status(404).send("Not Found");
     res.status(200).send(student);
   } catch (error) {
-    res.status(400).send(error);
+    res.status(500).send(error);
   }
 });
 
@@ -79,9 +80,9 @@ api.put("/students/:id", async (req, res) => {
     const output = JSON.stringify(parsed_students);
 
     await write(students_data, output);
-    res.status(200).send();
+    res.status(204).send();
   } catch (error) {
-    res.status(400).send(error);
+    res.status(500).send(error);
   }
 });
 
@@ -95,16 +96,17 @@ api.patch("/students/:id", async (req, res) => {
 
     parsed_students = parsed_students.map((student, index) => {
       if (index == req.params.id) {
-        student.gpa = req.body.gpa;
+        // student.gpa = req.body.gpa;
+        student = { ...student, ...req.body };
       }
       return student;
     });
 
     const output = JSON.stringify(parsed_students);
     await write(students_data, output);
-    res.status(200).send(student);
+    res.status(204).send();
   } catch (error) {
-    res.status(400).send(error);
+    res.status(500).send(error);
   }
 });
 
@@ -126,7 +128,7 @@ api.delete("/students/:id", async (req, res) => {
 
     res.status(204).send();
   } catch (error) {
-    res.status(400).send();
+    res.status(500).send(error);
   }
 });
 

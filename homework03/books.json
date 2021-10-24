@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Murder on the Orient Express",
+    "publish_year": 1934,
+    "price": 40,
+    "author": "Agatha Christie",
+    "genre": "crime"
+  },
+  {
+    "id": 2,
+    "title": "The Old Man and the Sea",
+    "publish_year": 1952,
+    "price": 45,
+    "author": "Ernest Hemingway",
+    "genre": "novel"
+  }
+]
