@@ -14,7 +14,7 @@ const create = async (req, res) => {
     res.status(201).send(data);
   } catch (error) {
     console.log(error);
-    resizeBy.status(500).send(error);
+    res.status(500).send(error);
   }
 };
 
@@ -44,7 +44,6 @@ const getOne = async (req, res) => {
 };
 
 const update = async (req, res) => {
-  console.log("req");
   try {
     const { manufacturer, model, year, engine, hp, fuel } = req.body;
 
