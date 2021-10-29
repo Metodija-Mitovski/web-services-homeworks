@@ -1,15 +1,23 @@
 const books = require("../pkg/books/index");
 const utils = require("./utils");
 
+const validate = require("../pkg/books/validator");
+
 const create = async (req, res) => {
-  utils.clearEmptySpace(req.body);
+  try {
+    await validate(req.body);
+  } catch (error) {
+    console.log(error);
+    return res.status(400).send(error);
+  }
 
   try {
-    const { title, publish_year, price, author, genre } = req.body;
-    const condition = title && publish_year && price && author && genre;
-    if (!condition) {
-      return res.status(400).send("Bad request");
-    }
+    // utils.clearEmptySpace(req.body);
+    // const { title, publish_year, price, author, genre } = req.body;
+    // const condition = title && publish_year && price && author && genre;
+    // if (!condition) {
+    //   return res.status(400).send("Bad request");
+    // }
     const data = await books.create(req.body);
     res.status(201).send(data);
   } catch (error) {
@@ -39,14 +47,20 @@ const getOne = async (req, res) => {
 };
 
 const update = async (req, res) => {
-  utils.clearEmptySpace(req.body);
+  // utils.clearEmptySpace(req.body);
 
-  const { title, publish_year, price, author, genre } = req.body;
+  // const { title, publish_year, price, author, genre } = req.body;
 
-  const condition = title && publish_year && price && author && genre;
+  // const condition = title && publish_year && price && author && genre;
 
-  if (!condition) {
-    return res.status(400).send("Bad request");
+  // if (!condition) {
+  //   return res.status(400).send("Bad request");
+  // }
+  try {
+    await validate(req.body);
+  } catch (error) {
+    console.log(error);
+    return res.status(400).send(error);
   }
 
   try {
@@ -68,20 +82,27 @@ const update = async (req, res) => {
 };
 
 const partialUpdate = async (req, res) => {
-  utils.clearEmptySpace(req.body);
   try {
-    const { title, publish_year, price, author, genre } = req.body;
-    let elements = Object.values(req.body);
+    await validate(req.body, "UPDATE");
+  } catch (error) {
+    console.log(error);
+    return res.status(400).send(error);
+  }
 
-    let condition_keys = title || publish_year || price || author || genre;
+  try {
+    // utils.clearEmptySpace(req.body);
+    // const { title, publish_year, price, author, genre } = req.body;
+    // let elements = Object.values(req.body);
 
-    let condition_key_values = elements.some(
-      (element) => typeof element === "string" && element === ""
-    );
+    // let condition_keys = title || publish_year || price || author || genre;
 
-    if (!condition_keys || condition_key_values) {
-      return res.status(400).send("Bad request");
-    }
+    // let condition_key_values = elements.some(
+    //   (element) => typeof element === "string" && element === ""
+    // );
+
+    // if (!condition_keys || condition_key_values) {
+    //   return res.status(400).send("Bad request");
+    // }
 
     let data = await books.partialUpdate(req.params.id, req.body);
 
