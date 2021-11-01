@@ -1,8 +1,18 @@
 const cars = require("../pkg/cars");
 const utils = require("./utils");
 
+const validate = require("../pkg/cars/validator");
+
 const create = async (req, res) => {
   utils.clearEmptySpace(req.body);
+
+  try {
+    await validate(req.body);
+  } catch (error) {
+    console.log(error);
+    return res.status(400).send(error);
+  }
+
   try {
     const { manufacturer, model, year, engine, hp, fuel } = req.body;
 
@@ -47,6 +57,13 @@ const getOne = async (req, res) => {
 
 const update = async (req, res) => {
   utils.clearEmptySpace(req.body);
+
+  try {
+    await validate(req.body);
+  } catch (error) {
+    console.log(error);
+    return res.status(400).send(error);
+  }
   try {
     const { manufacturer, model, year, engine, hp, fuel } = req.body;
 
@@ -75,6 +92,13 @@ const update = async (req, res) => {
 
 const partialUpdate = async (req, res) => {
   utils.clearEmptySpace(req.body);
+
+  try {
+    await validate(req.body, "UPDATE");
+  } catch (error) {
+    console.log(error);
+    return res.status(400).send(error);
+  }
 
   try {
     const { manufacturer, model, year, engine, hp, fuel } = req.body;

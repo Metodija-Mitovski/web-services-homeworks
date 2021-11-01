@@ -1,15 +1,15 @@
 const { Validator } = require("node-input-validator");
 
 const UserSchemaInsert = {
-  first_name: "required|minLength:3",
-  last_name: "required|minLength:4",
+  first_name: "required|minLength:3|string",
+  last_name: "required|minLength:4|string",
   email: "required|email",
-  password: "required|minLength:8",
+  password: "required|minLength:8|string",
 };
 
 const UserSchemaLogin = {
   email: "required|email",
-  password: "required",
+  password: "required|string",
 };
 
 const validate = async (data, schema) => {

@@ -106,6 +106,8 @@ const partialUpdate = async (req, res) => {
 
     let data = await books.partialUpdate(req.params.id, req.body);
 
+    console.log(data);
+
     if (data.matchedCount === 0) {
       return res.status(404).send("Not Found");
     }
