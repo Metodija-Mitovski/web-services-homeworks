@@ -2,9 +2,12 @@ require("./pkg/db");
 const express = require("express");
 const handlers = require("./handlers/auth");
 
+const cors = require("cors");
+
 const api = express();
 
 api.use(express.json());
+api.use(cors());
 
 api.post("/auth/login", handlers.login);
 api.get("/auth/validate", handlers.validate);

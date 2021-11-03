@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 let username = "dev";
-let dbname = "semosdb";
+let dbname = "semos";
 
 let dsn = `mongodb+srv://${username}:${password}@${host}/${dbname}?retryWrites=true&w=majority`;
 

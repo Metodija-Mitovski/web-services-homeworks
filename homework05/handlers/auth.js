@@ -1,9 +1,9 @@
 const users = require("../pkg/users");
 const validate_data = require("../pkg/users/validator");
-const util = require("./utils");
+const sanitaze = require("../pkg/sanitizers/sanitizers");
 
 const createAccount = async (req, res) => {
-  util.clearWhiteSpace(req.body);
+  sanitaze.clearWhiteSpace(req.body);
 
   try {
     await validate_data(req.body, "INSERT");
@@ -13,21 +13,20 @@ const createAccount = async (req, res) => {
   }
 
   try {
-    const user = await users.create(req.body);
+    const u = await users.create(req.body);
 
-    if (!user) {
-      return res.status(403).send("Email already in use");
-    }
-
-    res.status(201).send(user);
+    return res.status(201).send(u);
   } catch (error) {
     console.log(error);
+    if (error.code === 11000) {
+      return res.status(400).send("Bad request, email alraedy in use");
+    }
     res.status(500).send(error);
   }
 };
 
 const login = async (req, res) => {
-  util.clearWhiteSpace(req.body);
+  sanitaze.clearWhiteSpace(req.body);
   try {
     await validate_data(req.body, "LOGIN");
   } catch (error) {
@@ -36,13 +35,12 @@ const login = async (req, res) => {
   }
 
   try {
-    const user = await users.login(req.body);
-
-    if (!user) {
-      return res.status(401).send("Invalid email or password");
+    const u = await users.login(req.body.email, req.body.password);
+    if (!u) {
+      return res.status(400).send("Bad request");
     }
 
-    res.status(200).send("Login success");
+    return res.status(200).send("Login success");
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
