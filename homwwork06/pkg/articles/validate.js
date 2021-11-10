@@ -1,7 +1,7 @@
 const { Validator } = require("node-input-validator");
 
 const ArticleCreate = {
-  title: "required|minLength:5",
+  title: "required|minLength:4",
   content: "required|minLength:10",
   publish_date: "required",
 };

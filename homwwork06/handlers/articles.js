@@ -62,7 +62,10 @@ const update = async (req, res) => {
   }
 
   try {
-    await article.update(req.params.id, req.user.uid, req.body);
+    const a = await article.update(req.params.id, req.user.uid, req.body);
+    if (!a.matchedCount) {
+      return res.status(404).send("Not found");
+    }
     res.status(204).send();
   } catch (error) {
     console.log(error);
@@ -79,7 +82,15 @@ const patrialUpdate = async (req, res) => {
   }
 
   try {
-    await article.partialUpdate(req.params.id, req.user.uid, req.body);
+    const a = await article.partialUpdate(
+      req.params.id,
+      req.user.uid,
+      req.body
+    );
+
+    if (!a.matchedCount) {
+      return res.status(404).send("Not found");
+    }
     return res.status(204).send();
   } catch (error) {
     console.log(error);
@@ -89,7 +100,11 @@ const patrialUpdate = async (req, res) => {
 
 const remove = async (req, res) => {
   try {
-    await article.remove(req.params.id, req.user.uid);
+    const a = await article.remove(req.params.id, req.user.uid);
+
+    if (!a.deletedCount) {
+      return res.status(404).send("Not found");
+    }
     res.status(204).send();
   } catch (error) {
     console.log(error);
