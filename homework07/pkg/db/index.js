@@ -1,12 +1,9 @@
 const mongoose = require("mongoose");
-
-let username = "dev";
-let dbname = "semosdb";
-let password = "";
-let host = "";
+const config = require("../config");
+let cfgDB = config.get("db");
 
 //connection string
-let dsn = `mongodb+srv://${username}:${password}@${host}/${dbname}?retryWrites=true&w=majority`;
+let dsn = `mongodb+srv://${cfgDB.username}:${cfgDB.password}@${cfgDB.host}/${cfgDB.dbname}?retryWrites=true&w=majority`;
 
 mongoose.connect(
   dsn,
