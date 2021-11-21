@@ -15,17 +15,18 @@ api.use(
     secret: cfgSecurity.secret,
     algorithms: cfgSecurity.algorithms,
   }).unless({
-    path: ["/auth/login", "/auth/create-account", "/auth/verify"],
+    path: ["/auth/login", "/auth/create-account", "/auth/resend"],
   })
 );
 
 api.post("/auth/login", handlers.login);
 api.get("/auth/validate", handlers.validate);
-api.get("/auth/verify", handlers.verifyAccount);
+api.patch("/auth/verify", handlers.verifyAccount);
+api.get("/auth/verify-resend", handlers.resendVerification);
 api.post("/auth/renew-jwt", handlers.renew);
 api.post("/auth/create-account", handlers.createAccount);
-api.post("/auth/forgot-passowrd", handlers.forgotPassword);
-api.post("/auth/reset-passowrd", handlers.resetPassword);
+api.patch("/auth/forgot-passowrd", handlers.forgotPassword);
+api.patch("/auth/reset-passowrd", handlers.resetPassword);
 
 api.listen(cfgApp.port, (err) => {
   if (err) {

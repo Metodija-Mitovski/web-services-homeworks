@@ -1,7 +1,7 @@
 {
   "app": {
-    "port": "10000",
-    "default_url": "http://localhost"
+    "port": "",
+    "default_url": ""
   },
   "security": {
     "algorithms": ["HS256"],
@@ -9,13 +9,13 @@
     "token_exp": "24h"
   },
   "database": {
-    "username": "",
-    "password": "",
-    "dbname": "",
-    "host": ""
+    "username": "dev",
+    "password": "8M3AvRM8C1sYOObe",
+    "dbname": "semosdb",
+    "host": "cluster0.qsvxm.mongodb.net"
   },
   "mailer": {
-    "username": "",
+    "username": "api",
     "key": "",
     "domain": "",
     "default_address": "",

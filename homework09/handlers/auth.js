@@ -5,8 +5,6 @@ const mailer = require("../pkg/mailer");
 const security = require("../pkg/security");
 const config = require("../pkg/config");
 
-const cfgSecurity = config.get("security");
-const cfgMailer = config.get("mailer");
 const cfgApp = config.get("app");
 
 const login = async (req, res) => {
@@ -81,22 +79,34 @@ const createAccount = async (req, res) => {
 
 const verifyAccount = async (req, res) => {
   try {
-    let decoded = security.verifyToken(req.query.token);
-
-    const u = await user.update(decoded.uid, { confirmed: true });
+    const u = await user.update(req.user.uid, { confirmed: true });
 
     if (!u.matchedCount) {
       return res.status(404).send("Not found");
     }
-    return res.status(200).send("Verify success");
+    return res.status(204).send();
   } catch (error) {
-    console.log(error.name);
-    if (
-      error.name === "TokenExpiredError" ||
-      error.name === "JsonWebTokenError"
-    ) {
-      return res.status(400).send(error);
+    res.status(500).send(error);
+  }
+};
+
+const resendVerification = async (req, res) => {
+  try {
+    const u = await user.getByEmail(req.query.email);
+    if (!u) {
+      return res.status(404).send("Not found");
     }
+
+    const token = security.getToken(u);
+
+    mailer.sendMail([u.email], "VERIFY", {
+      first_name: u.first_name,
+      last_name: u.last_name,
+      url: `${cfgApp.default_url}:${cfgApp.port}/auth/resend?token=${token}`,
+    });
+
+    res.status(200).send("Verification email sent");
+  } catch (error) {
     res.status(500).send(error);
   }
 };
@@ -115,4 +125,5 @@ module.exports = {
   resetPassword,
   renew,
   verifyAccount,
+  resendVerification,
 };
