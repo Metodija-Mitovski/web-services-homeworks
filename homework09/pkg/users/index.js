@@ -10,7 +10,7 @@ const User = mongoose.model(
       unique: true,
     },
     password: String,
-    confirmed: {
+    verified: {
       type: Boolean,
       default: false,
     },

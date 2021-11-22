@@ -1,7 +1,6 @@
 {
   "app": {
-    "port": "",
-    "default_url": ""
+    "port": "10000"
   },
   "security": {
     "algorithms": ["HS256"],
@@ -9,16 +8,16 @@
     "token_exp": "24h"
   },
   "database": {
-    "username": "dev",
-    "password": "8M3AvRM8C1sYOObe",
-    "dbname": "semosdb",
-    "host": "cluster0.qsvxm.mongodb.net"
+    "username": "",
+    "password": "",
+    "dbname": "b",
+    "host": ""
   },
   "mailer": {
-    "username": "api",
+    "username": "",
     "key": "",
     "domain": "",
     "default_address": "",
-    "default_verify_url": "http://localhost:10000/auth/verify"
+    "acc_verify_url": "http://localhost:3000/auth/verify"
   }
 }

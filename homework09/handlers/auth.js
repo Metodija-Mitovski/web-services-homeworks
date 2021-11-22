@@ -6,6 +6,7 @@ const security = require("../pkg/security");
 const config = require("../pkg/config");
 
 const cfgApp = config.get("app");
+const cfgMail = config.get("mailer");
 
 const login = async (req, res) => {
   try {
@@ -26,7 +27,7 @@ const login = async (req, res) => {
       return res.status(400).send("Bad request. Wrong password");
     }
 
-    if (!u.confirmed) {
+    if (!u.verified) {
       return res.status(400).send("Verify your account");
     }
 
@@ -60,7 +61,7 @@ const createAccount = async (req, res) => {
     await mailer.sendMail([u.email], "VERIFY", {
       first_name: u.first_name,
       last_name: u.last_name,
-      url: `${cfgApp.default_url}:${cfgApp.port}/auth/verify?token=${token}`,
+      url: `${cfgMail.acc_verify_url}/${token}`,
     });
 
     return res
@@ -102,7 +103,7 @@ const resendVerification = async (req, res) => {
     mailer.sendMail([u.email], "VERIFY", {
       first_name: u.first_name,
       last_name: u.last_name,
-      url: `${cfgApp.default_url}:${cfgApp.port}/auth/resend?token=${token}`,
+      url: `${cfgMail.acc_verify_url}/${token}`,
     });
 
     res.status(200).send("Verification email sent");
