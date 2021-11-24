@@ -10,14 +10,14 @@
   "database": {
     "username": "",
     "password": "",
-    "dbname": "b",
+    "dbname": "",
     "host": ""
   },
   "mailer": {
-    "username": "",
+    "username": "api",
     "key": "",
     "domain": "",
     "default_address": "",
-    "acc_verify_url": "http://localhost:3000/auth/verify"
+    "acc_verify_url": ""
   }
 }

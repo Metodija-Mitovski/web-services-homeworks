@@ -5,7 +5,6 @@ const mailer = require("../pkg/mailer");
 const security = require("../pkg/security");
 const config = require("../pkg/config");
 
-const cfgApp = config.get("app");
 const cfgMail = config.get("mailer");
 
 const login = async (req, res) => {
@@ -80,7 +79,7 @@ const createAccount = async (req, res) => {
 
 const verifyAccount = async (req, res) => {
   try {
-    const u = await user.update(req.user.uid, { confirmed: true });
+    const u = await user.update(req.user.uid, { verified: true });
 
     if (!u.matchedCount) {
       return res.status(404).send("Not found");

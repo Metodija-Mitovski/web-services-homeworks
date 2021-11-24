@@ -15,7 +15,7 @@ api.use(
     secret: cfgSecurity.secret,
     algorithms: cfgSecurity.algorithms,
   }).unless({
-    path: ["/auth/login", "/auth/create-account", "/auth/resend"],
+    path: ["/auth/login", "/auth/create-account", "/auth/verify-resend"],
   })
 );
 

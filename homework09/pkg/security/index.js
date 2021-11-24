@@ -16,11 +16,6 @@ const getToken = (data) => {
   );
 };
 
-const verifyToken = (token) => {
-  return jwt.verify(token, cfgSecurity.secret);
-};
-
 module.exports = {
   getToken,
-  verifyToken,
 };
